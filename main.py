@@ -10,16 +10,8 @@ import joblib
 import os
 
 # Auto-detect file in the current directory
-current_dir = os.getcwd()
 default_file_name = "D:\Coustomer churn prediction\WA_Fn-UseC_-Telco-Customer-Churn.csv"
-file_path = os.path.join(current_dir, default_file_name)
-
-# If file not found, ask user to specify the path
-if not os.path.exists(file_path):
-    print(f"File not found in {current_dir}. Please provide the correct path.")
-    file_path = input("D:\Coustomer churn prediction\WA_Fn-UseC_-Telco-Customer-Churn.csv ").strip()
-    if not os.path.exists(file_path):
-        raise FileNotFoundError(f"Dataset not found at {file_path}. Please check the file path.")
+file_path = os.path.join(default_file_name)
 
 data = pd.read_csv(file_path)
 
